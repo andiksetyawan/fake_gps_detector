@@ -1,4 +1,4 @@
-# Fake GPS Detector (Android Only)
+# Fake GPS Detector, Emulator Device Detector
 
 A Flutter plugin for detecting the emulator device and mock location / fake gps.
 
