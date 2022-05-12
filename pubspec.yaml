@@ -1,6 +1,6 @@
 name: fake_gps_detector
 description: A Flutter plugin for detecting the emulator device and mock location / fake gps.
-version: 0.5.1
+version: 0.6.0
 homepage: https://github.com/andiksetyawan/fake_gps_detector.git
 
 environment:
