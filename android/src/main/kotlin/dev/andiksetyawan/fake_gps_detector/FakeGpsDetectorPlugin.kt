@@ -80,11 +80,14 @@ public class FakeGpsDetectorPlugin: FlutterPlugin, MethodCallHandler, ActivityAw
     withContext(Dispatchers.Main) {
       try {
         val location = fusedLocationClient.lastLocation.await()
+        val latitude = location.latitude
+        println("latitude : $latitude")
         val isMock = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
-          location.isFromMockProvider
+          location.isFromMockProvider()
         } else {
           !Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ALLOW_MOCK_LOCATION).equals("0")
         }
+        println("isMock : $isMock")
         lastResult!!.success(isMock)
         lastResult = null
       } catch (e: Throwable) {
